@@ -39,8 +39,7 @@ public class Player extends Entity {
 		setAnimation();
 	}
 
-	// TODO: add an int parameter to this method named lvlOffset
-	public void render(Graphics g) {
+	public void render(Graphics g, int lvlOffset) {
 
 		g.drawImage(
 				animations[playerAction][aniIndex],
@@ -99,15 +98,14 @@ public class Player extends Entity {
 		if (jump)
 			jump();
 
-		// TODO: Replace lines 109 and 110 with this commented out code.
-		// if (!inAir){
-		// 	if((!left && !right) || (right && left)){
-		// 		return;
-		// 	}
-		// }
 
-		if (!left && !right && !inAir)
-			return;
+		 if (!inAir){
+		 	if((!left && !right) || (right && left)){
+		 		return;
+		 	}
+		 }
+
+
 
 		float xSpeed = 0;
 
